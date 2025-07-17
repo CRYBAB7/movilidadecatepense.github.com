@@ -1,0 +1,327 @@
+.body {
+    font-family: Arial, sans-serif;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+}
+.header-rojo {
+    background: #a00;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0 0 0;
+}
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    position: relative;
+}
+.icono-blanco {
+    width: 47px;
+    height: 50px;
+    background: #fff;
+    border-radius: 5px;
+    object-fit: contain;
+}
+.titulo-central {
+    flex: 1;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+}
+.usuario-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+.icono-usuario {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+    object-fit: cover;
+}
+.menu-interaccion {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #a00;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    padding: 10px 0;
+    min-width: 160px;
+    z-index: 10;
+}
+.menu-interaccion ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.menu-interaccion li a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+.menu-interaccion li a:hover {
+    background: #fff;
+    color: #a00;
+}
+.oculto {
+    display: none;
+}
+.subtitulo {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+main {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px 0;
+    text-align: center;
+}
+.search {
+    width: 80%;
+    padding: 8px;
+    margin: 10px 0 20px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.formulario label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.tarjeta-input {
+    width: 80%;
+    padding: 8px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+hr {
+    margin: 10px 0 20px 0;
+}
+.botones {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+button {
+    width: 70%;
+    margin: 0 auto;
+    padding: 12px 0;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+.mexibus { background: #1fd3d3; }
+.mexicable { background: #f9c6ec; color: #222; }
+.trolebus { background: #d32f2f; }
+.trenes { background: #001a57; }
+.crep { background: #ffa726; color: #222; }
+.ecobici { background: #7ed6a3; color: #222; }
+.banner {
+    margin: 20px 0;
+    text-align: center;
+}
+.footer-rojo {
+    background: #a00;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-weight: bold;
+    font-size: 18px;
+}
+.modal-imagen {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.oculto {
+    display: none;
+}
+.imagen-zoom {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.20);
+}
+.cerrar-modal {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: #fff;
+    font-size: 48px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+}
+/* Botones de líneas */
+.menu-lineas {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 0 20px 0;
+}
+.linea-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+.linea1 { background: #7ed957; }
+.linea2 { background: #d32f2f; }
+.linea4 { background: #c9b037; }
+
+/* Contenido de línea */
+.contenido-linea {
+    margin-top: 30px;
+    text-align: center;
+}
+.contenido-linea img {
+    max-width: 90%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+}
+.estaciones-lista {
+    text-align: left;
+    display: inline-block;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 8px;
+    padding: 18px 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.estaciones-lista h3 {
+    margin-top: 0;
+    color: #a00;
+}
+.estaciones-lista ul {
+    margin: 0 0 10px 0;
+    padding-left: 18px;
+}
+.estaciones-lista li {
+    margin-bottom: 6px;
+}
+.estaciones-lista .horario {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 8px;
+}
+.direccion {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Apartado de anuncios lateral */
+.anuncios-lateral {
+    background: #fff8e1;
+    border: 2px solid #a00;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    padding: 18px 20px;
+    margin-top: 10px;
+}
+.anuncios-lateral h3 {
+    margin-top: 0;
+    color: #a00;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+.anuncios-lateral ul {
+    padding-left: 18px;
+    margin: 0;
+}
+.anuncios-lateral li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* Responsive para móviles */
+@media (max-width: 900px) {
+    .contenido-linea > div {
+        flex-direction: column !important;
+        gap: 0 !important;
+    }
+    .anuncios-lateral {
+        max-width: 100%;
+        margin: 20px auto;
+    }
+}
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 15px;
+    position: relative;
+}
+.titulo-central {
+    flex: 1;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+}
+.usuario-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+.icono-usuario {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+    object-fit: cover;
+}
+.video-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+    width: 100%;
+}
+.video-section video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+}
+.boton-continuar {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}

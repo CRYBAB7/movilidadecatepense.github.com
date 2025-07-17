@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TROLEMEX | Ecatepec en Movimiento</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .menu-lineas {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0 20px 0;
+        }
+        .linea-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+        }
+        .linea1 { background: #3962d1; }
+        .linea2 { background: #d32f2f; }
+        .linea4 { background: #c9b037; }
+        .contenido-linea {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .contenido-linea img {
+            max-width: 90%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+        }
+        .estaciones-lista {
+            text-align: left;
+            display: inline-block;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 8px;
+            padding: 18px 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .estaciones-lista h3 {
+            margin-top: 0;
+            color: #a00;
+        }
+        .estaciones-lista ul {
+            margin: 0 0 10px 0;
+            padding-left: 18px;
+        }
+        .estaciones-lista li {
+            margin-bottom: 6px;
+        }
+        .estaciones-lista .horario {
+            font-size: 15px;
+            color: #333;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header-rojo">
+        <div class="header-top">
+            <img src="c:\Users\Estudiantes\Downloads\ac4-removebg-preview.png" alt="Icono 1" class="icono-blanco">
+            <span class="titulo-central">ECATEPEC EN MOVIMIENTO</span>
+            <button id="usuario-btn" class="usuario-btn">
+                <img src="c:\Users\Estudiantes\Downloads\ac4-removebg-preview.png" alt="Usuario" class="icono-usuario">
+            </button>
+            <nav id="menu-interaccion" class="menu-interaccion oculto">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#">Usuario Movimex</a></li>
+                    <li><a href="#">Ajustes</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="subtitulo">Proyecto integral de movilidad</div>
+    </header>
+    <main>
+        <h2>TROLEMEX</h2>
+        <div class="menu-lineas">
+            <button class="linea-btn linea1" onclick="mostrarLinea('linea1')">LÍNEA 1</button>
+        </div>
+        <div id="contenido-linea" class="contenido-linea"></div>
+        <aside class="anuncios-lateral">
+            <h3>🚨 MANTENIMIENTO</h3>
+            <ul>
+                <li><strong>ESTAMOS TRABAJANDO POR ECATEPEC:</strong> PROXIMAMENTE NUEVAS RUTAS Y MEJORAS EN EL SERVICIO.</li>
+
+            </ul>
+        </aside>
+    </main>
+      
+    <script>
+        // Sobrescribe la función mostrarLinea para mostrar anuncios y dirección
+        function mostrarLinea(linea) {
+            const info = lineas[linea];
+            const cont = document.getElementById('contenido-linea');
+            cont.innerHTML = `
+                <img src="${info.imagen}" alt="Imagen de ${linea}">
+                <div class="estaciones-lista">
+                    <div class="direccion"><strong>${info.direccion}</strong></div>
+                    <h3>Estaciones</h3>
+                    <ul>
+                        ${info.estaciones.map(e => `<li>${e}</li>`).join('')}
+                    </ul>
+                    <div class="horario">${info.horario}</div>
+                </div>
+            `;
+        }
+    </script>
+    <footer class="footer-rojo">
+        <div>GOBIERNO DE ECATEPEC</div>
+        <div>SIGAMOS HACIENDO HISTORIA</div>
+    </footer>
+    <script>
+        // Menú usuario
+        document.getElementById('usuario-btn').onclick = function(event) {
+            event.stopPropagation();
+            var menu = document.getElementById('menu-interaccion');
+            menu.classList.toggle('oculto');
+        };
+        document.addEventListener('click', function(event) {
+            var menu = document.getElementById('menu-interaccion');
+            if (!menu.classList.contains('oculto')) {
+                menu.classList.add('oculto');
+            }
+        });
+        document.getElementById('menu-interaccion').onclick = function(event) {
+            event.stopPropagation();
+        };
+
+        // Contenido de cada línea
+        const lineas = {
+            linea1: {
+                imagen: "c:\\Users\\Estudiantes\\Downloads\\TROLEMEX.jpg",
+                direccion: "Dirección: Tecámac ↔ San Cristóbal",
+                estaciones: [
+                    "SEGUIMOS TRABAJANDO EN LAS ESTACIONES"
+                ],
+                horario: "Ecatepec: 2025-2026"
+            }
+        };
+
+
+        // Mostrar contenido de la línea seleccionada
+        function mostrarLinea(linea) {
+            const info = lineas[linea];
+            const cont = document.getElementById('contenido-linea');
+    cont.innerHTML = `
+        <img src="${info.imagen}" alt="Imagen de ${linea}">
+        <div class="estaciones-lista">
+            <h3>Estaciones</h3>
+            <ul>
+                ${info.estaciones.map(e => `<li>${e}</li>`).join('')}
+            </ul>
+            <div class="horario">${info.horario}</div>
+        </div>
+    `;
+}
+// Modal para zoom de imagen (debe ir fuera del template literal y del script si es HTML)
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            background: url('c:\Users\Estudiantes\Downloads\ac4-removebg-preview.png') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .bienvenida {
+            background: rgba(255,255,255,0.85);
+            border-radius: 12px;
+            max-width: 400px;
+            margin: 60px auto 0 auto;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        }
+        .bienvenida h1 {
+            margin-bottom: 20px;
+            color: #a00;
+        }
+        .formulario-principal input {
+            width: 80%;
+            padding: 8px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .continuar-btn {
+            width: 85%;
+            padding: 12px 0;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            color: #fff;
+            font-weight: bold;
+            background: #a00;
+            cursor: pointer;
+            margin-top: 18px;
+        }
+        .continuar-btn:hover {
+            background: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <header class="header-rojo">
+        <div class="header-top">
+    <span class="titulo-central">ECATEPEC EN MOVIMIENTO</span>
+    <button id="usuario-btn" class="usuario-btn" style="margin-left:auto;">
+        <img src="c:\Users\Estudiantes\Downloads\ac4-removebg-preview.png" alt="Usuario" class="icono-usuario">
+    </button>
+    <nav id="menu-interaccion" class="menu-interaccion oculto">
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Usuario Movimex</a></li>
+            <li><a href="#">Ajustes</a></li>
+        </ul>
+    </nav>
+</div>
+        <div class="subtitulo">Proyecto integral de movilidad</div>
+    </header>
+    <div class="bienvenida">
+        <h1>¡Bienvenido!</h1>
+        <form class="formulario-principal" id="form-principal">
+            <input type="text" placeholder="ID de Tarjeta" required>
+            <input type="email" placeholder="Correo electrónico" required>
+            <input type="password" placeholder="Contraseña" required>
+            <button type="submit" class="continuar-btn">Continuar</button>
+        </form>
+    </div>
+    <footer class="footer-rojo">
+        <div>GOBIERNO DE ECATEPEC</div>
+        <div>SIGAMOS HACIENDO HISTORIA</div>
+    </footer>
+    <script>
+        // Menú de usuario
+        document.getElementById('usuario-btn').onclick = function(event) {
+            event.stopPropagation();
+            var menu = document.getElementById('menu-interaccion');
+            menu.classList.toggle('oculto');
+        };
+        document.addEventListener('click', function(event) {
+            var menu = document.getElementById('menu-interaccion');
+            if (!menu.classList.contains('oculto')) {
+                menu.classList.add('oculto');
+            }
+        });
+        document.getElementById('menu-interaccion').onclick = function(event) {
+            event.stopPropagation();
+        };
+        // Redirigir al hacer clic en continuar
+        document.getElementById('form-principal').onsubmit = function(e) {
+            e.preventDefault();
+            window.location.href = "index.html";
+        };
+    </script>
+</body>
+</html>

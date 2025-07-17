@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación Web Estática</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="header-rojo">
+        <div class="header-top">
+    <img src="c:\Users\Estudiantes\Downloads\ac4-removebg-preview.png" alt="Logo" class="icono-blanco">
+    <span class="titulo-central">ECATEPEC EN MOVIMIENTO</span>
+    <button id="usuario-btn" class="usuario-btn" style="margin-left:auto;">
+        <img src="c:\Users\Estudiantes\Downloads\ac4-removebg-preview.png" alt="Usuario" class="icono-usuario">
+    </button>
+    <nav id="menu-interaccion" class="menu-interaccion oculto">
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Usuario Movimex</a></li>
+            <li><a href="#">Ajustes</a></li>
+        </ul>
+    </nav>
+</div>
+        <div class="subtitulo">Proyecto integral de movilidad</div>
+    </header>
+    <main>
+        <h2>Gobierno de Ecatepec</h2>
+        <input type="text" placeholder="Search" class="search">
+        <div class="formulario">
+            <label>INGRESA TU NUMERO DE TARJETA MOVIMEX</label>
+            <input type="text" placeholder="Escribe tu número aquí" class="tarjeta-input" id="numeroTarjeta">
+            <button class="boton-continuar" onclick="mostrarMenu()">Continuar</button>
+
+
+<!-- Menú oculto que se mostrará al hacer clic en "Continuar" -->
+<div id="menuOpciones" style="display:none; margin-top: 20px;">
+    <p>Selecciona una opción:</p>
+    <button onclick="opcionMovimex()">Movimex</button>
+    <button onclick="window.location.href='conductor.html'">Conductor</button>
+    <style>
+  button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+</style>
+</div>
+<script>
+  function mostrarMenu() {
+    document.getElementById('menuOpciones').style.display = 'block';
+  }
+</script>
+</body>
+</html>
+            <hr>
+            <div class="botones">
+                <button class="mexibus" onclick="location.href='mexibus.html'">MEXIBUS</button>
+                <button class="mexicable" onclick="location.href='mexicable.html'">MEXICABLE</button>
+                <button class="trolebus" onclick="location.href='trolemex.html'">TROLEBUS</button>
+                <button class="trenes" onclick="location.href='Trenes.html'">TRENES</button>
+                <button class="crep" onclick="location.href='CREP.html'">CREP</button>
+                <button class="ecobici" onclick="location.href='ECOBICI.html'">ECOBICI</button>
+            </div>
+        </div>
+       <div class="video-section" style="text-align:center; margin: 30px 0;">
+    <video width="560" height="315" controls>
+        <source src="c:\Users\Estudiantes\Downloads\ssstik.io_1752761195216.mp4" type="video/mp4">
+        Tu navegador no soporta la reproducción de video.
+    </video>
+</div>
+    </main>
+    <footer class="footer-rojo">
+        <div>GOBIERNO DE ECATEPEC</div>
+        <div>SIGAMOS HACIENDO HISTORIA</div>
+    </footer>
+    <script>
+        // Menú de usuario
+        document.getElementById('usuario-btn').onclick = function(event) {
+            event.stopPropagation();
+            var menu = document.getElementById('menu-interaccion');
+            menu.classList.toggle('oculto');
+        };
+        document.addEventListener('click', function(event) {
+            var menu = document.getElementById('menu-interaccion');
+            if (!menu.classList.contains('oculto')) {
+                menu.classList.add('oculto');
+            }
+        });
+        document.getElementById('menu-interaccion').onclick = function(event) {
+            event.stopPropagation();
+        };
+        // Filtrar botones de transporte según búsqueda
+        document.querySelector('.search').addEventListener('input', function() {
+            const valor = this.value.trim().toLowerCase();
+            const botones = document.querySelectorAll('.botones button');
+            botones.forEach(btn => {
+                if (valor === "" || btn.textContent.toLowerCase().includes(valor)) {
+                    btn.style.display = "block";
+                } else {
+                    btn.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
